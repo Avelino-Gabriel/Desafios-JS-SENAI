@@ -1,2 +1,2 @@
-# Jogo-de-Cartas
-Jogo de cartas desenvolvido para o curso de desenvolvimento de sistemas do SENAI Morvan Figueiredo.
+#Desafios-JS-SENAI
+Repositório desenvolvido para os deasfios de JS do curso de desenvolvimento de sistemas do SENAI Morvan Figueiredo.
