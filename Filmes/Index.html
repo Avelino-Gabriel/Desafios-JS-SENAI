@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+</head>
+
+<body>
+    <!-- O segundo valor estará selecionado inicialmente -->
+    <select name="select" id="select">
+        <option value="valor0">Selecione o filme:</option>
+        <option value="Matrix">Matrix</option>
+        <option value="Star Wars"">Star Wars</option>
+        <option value=" Harry Potter">Harry Potter</option>
+        <option value="Jurassic Park">Jurassic Park</option>
+        <option value="Indiana Jones">Indiana Jones</option>
+    </select>
+    <input type="button" value="Calcular" onclick="darNota()" class="botao">
+
+    <script>
+
+        let filmes = ['Matrix','Star Wars','Harry Potter','Jurassic Park','Indiana Jones'];
+        let notas = [];
+        
+
+
+        function darNota(filmes, nota) {
+            let opcao = document.getElementById('select').value;
+
+            switch (opcao) {
+                case 'Matrix':
+                    notas[i] += userNota;
+                    i++;
+                    break;
+                case 'Star Wars':
+                    filmes[i] = 'Star Wars';
+                    i++;
+                    break;
+                case 'Harry Potter':
+                    filmes[i] = 'Harry Potter';
+                    i++;
+                    break;
+                case 'Jurassic Park':
+                    filmes[i] = 'Jurassic Park';
+                    i++;
+                    break;
+                case 'Indiana Jones':
+                    filmes[i] = 'Indiana Jones';
+                    i++;
+                    break;
+            }
+            alert(filmes);
+        }
+
+    </script>
+</body>
+
+</html>
