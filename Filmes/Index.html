@@ -10,50 +10,77 @@
 
 <body>
     <!-- O segundo valor estará selecionado inicialmente -->
-    <select name="select" id="select">
-        <option value="valor0">Selecione o filme:</option>
-        <option value="Matrix">Matrix</option>
-        <option value="Star Wars"">Star Wars</option>
-        <option value=" Harry Potter">Harry Potter</option>
-        <option value="Jurassic Park">Jurassic Park</option>
-        <option value="Indiana Jones">Indiana Jones</option>
-    </select>
-    <input type="button" value="Calcular" onclick="darNota()" class="botao">
+    <form id="form">
+        <select name="select" id="select">
+            <option value="valor0">Selecione o filme:</option>
+            <option value="Matrix">Matrix</option>
+            <option value="Star Wars"">Star Wars</option>
+            <option value="Harry Potter">Harry Potter</option>
+            <option value="Jurassic Park">Jurassic Park</option>
+            <option value="Indiana Jones">Indiana Jones</option>
+        </select>
+        <input type="number" id="nota" placeholder="nota">
+        <input type="submit">
+    </form>
+    <h1 id="mediaFilme"></h1>
 
     <script>
+        let filmes = ['Matrix', 'Star Wars', 'Harry Potter', 'Jurassic Park', 'Indiana Jones'];
+        let notas = [0, 0, 0, 0];
+        let selecionar = document.getElementById('form');
 
-        let filmes = ['Matrix','Star Wars','Harry Potter','Jurassic Park','Indiana Jones'];
-        let notas = [];
-        
+        let opcaoSelecionada = document.getElementById('select');
 
+        let index = 0;
 
-        function darNota(filmes, nota) {
-            let opcao = document.getElementById('select').value;
+        let Matrix = 0;
+        let StarWars = 0;
+        let HarryPotter = 0;
+        let JurassicPark = 0;
+        let IndianaJones = 0;
+
+        selecionar.addEventListener('submit', function (e) {
+            let opcao = opcaoSelecionada.value;
+            e.preventDefault();
+
+            notaDigitada = parseInt(document.getElementById("nota").value);
+
+            filmes.forEach(function (filme) {
+                if (filmes.includes(opcao)) {
+                    index = filmes.indexOf(opcao);
+                }
+            });
+
+            if (notaDigitada > 10) {
+                alert("Digite uma nota válida");
+            } else {
+                notas[index] += notaDigitada;
+            }
 
             switch (opcao) {
                 case 'Matrix':
-                    notas[i] += userNota;
-                    i++;
+                    Matrix++;
+                    media = notas[index] / Matrix;
                     break;
                 case 'Star Wars':
-                    filmes[i] = 'Star Wars';
-                    i++;
+                    StarWars++;
+                    media = notas[index] / StarWars;
                     break;
                 case 'Harry Potter':
-                    filmes[i] = 'Harry Potter';
-                    i++;
+                    HarryPotter++;
+                    media = notas[index] / HarryPotter;
                     break;
                 case 'Jurassic Park':
-                    filmes[i] = 'Jurassic Park';
-                    i++;
+                    Matrix++
+                    media = notas[index] / JurassicPark;
                     break;
                 case 'Indiana Jones':
-                    filmes[i] = 'Indiana Jones';
-                    i++;
+                    Matrix++
+                    media = notas[index] / IndianaJones;
                     break;
             }
-            alert(filmes);
-        }
+            document.getElementById('mediaFilme').innerHTML = opcao + ': ' + media.toFixed(2);
+        })
 
     </script>
 </body>
